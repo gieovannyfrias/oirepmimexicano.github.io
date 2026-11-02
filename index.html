@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oirepmi México | Primer Imperio Mexicano</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- El Header corporativo se inyectará aquí -->
+    <header id="site-header"></header>
+    <div class="premium-dashboard">
+        
+        <!-- BARRA LATERAL: Buscador y Lista de los 32 Estados -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="brand-logo">Oirepmi<span>Mexicano</span></a>
+                <p class="brand-tagline">Portafolio 2026</p>
+                <div class="search-box">
+                    <input type="text" id="search-state" placeholder="Buscar estado corporativo...">
+                    <span class="search-icon">🔍</span>
+                </div>
+            </div>
+            
+            <!-- Contenedor con Scroll dedicado para los 32 estados -->
+            <div class="states-scroll-list" id="states-list">
+                <!-- Se inyectan dinámicamente por JS o pre-renderizados para SEO -->
+            </div>
+        </aside>
+
+        <!-- PANEL PRINCIPAL CINEMÁTICO: Video, Multimedia y Datos ESG -->
+        <main class="cinematic-viewer">
+            <!-- Capa Multimedia Dinámica (Fondo) -->
+            <div class="media-container" id="media-viewport">
+                <div class="gradient-overlay"></div>
+                <!-- El JS intercambiará dinámicamente entre <video> o <img> premium -->
+                <video id="bg-video" autoplay loop muted playsinline src="https://oirepmimexicano.gieovannyfrias.com/Video/Portada_mexico.webm"></video>
+            </div>
+
+            <!-- Información Corporativa Superpuesta -->
+            <div class="corporate-content">
+                <div class="content-header">
+                    <span class="location-ticker">Sede Activa // <span id="current-region">Nacional</span></span>
+                    <h1 class="state-title" id="state-title">Presencia Inmobiliaria e Industrial</h1>
+                    <p class="state-description" id="state-desc">Seleccione una entidad de la República Mexicana para desplegar los indicadores financieros de clase mundial, la infraestructura de vanguardia y el material cinematográfico exclusivo de nuestras divisiones corporativas.</p>
+                </div>
+
+                <!-- Tarjetas de Métricas Premium (Estilo Terminal Financiera Bloomberg) -->
+                <div class="metrics-dashboard">
+                    <div class="metric-card">
+                        <span class="m-label">Proyectos Activos</span>
+                        <span class="m-value" id="metric-projects">142</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="m-label">Inversión Compuesta</span>
+                        <span class="m-value" id="metric-investment">$4.8B USD</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="m-label">Empleos Directos</span>
+                        <span class="m-value" id="metric-jobs">25,400</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+       <!-- El Footer corporativo se inyectará aquí -->
+    <footer id="site-footer"></footer>
+<style>
+  :root {
+    --bg-main: #060709;
+    --sidebar-bg: #0d0f13;
+    --card-surface: rgba(20, 24, 33, 0.65);
+    --accent: #d4af37; /* Oro Premium */
+    --accent-glow: rgba(212, 175, 55, 0.25);
+    --text-pure: #ffffff;
+    --text-muted: #94a3b8;
+    --font-luxury: 'Cinzel', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-premium: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-pure);
+    font-family: var(--font-sans);
+overflow-x: hidden;
+  height: 100vh;
+  zoom:75%;
+}
+
+/* DASHBOARD LAYOUT */
+.premium-dashboard {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* BARRA LATERAL (SCROLL INDEPENDIENTE) */
+.sidebar {
+    width: 380px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.sidebar-header {
+    padding: 35px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.brand-logo {
+    font-family: var(--font-luxury);
+    color: var(--text-pure);
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.brand-logo span { color: var(--accent); }
+.brand-tagline { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; }
+
+/* Buscador Predictivo */
+.search-box {
+    margin-top: 25px;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    background-color: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 14px 45px 14px 18px;
+    color: var(--text-pure);
+    border-radius: 6px;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    transition: var(--transition-premium);
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.search-icon { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-size: 0.9rem; opacity: 0.6; }
+
+/* Lista de Estados */
+.states-scroll-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 25px;
+}
+
+/* Personalización del Scrollbar Premium */
+.states-scroll-list::-webkit-scrollbar { width: 4px; }
+.states-scroll-list::-webkit-scrollbar-track { background: transparent; }
+.states-scroll-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+.states-scroll-list::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+.state-item-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    text-align: left;
+    padding: 18px 15px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition-premium);
+    border-left: 2px solid transparent;
+}
+
+.state-item-btn:hover {
+    background-color: rgba(255,255,255,0.02);
+    border-left-color: rgba(214, 175, 55, 0.4);
+    transform: translateX(3px);
+}
+
+.state-item-btn.active {
+    background: linear-gradient(90deg, rgba(212,175,55,0.08) 0%, transparent 100%);
+    border-left-color: var(--accent);
+}
+
+.btn-name { color: var(--text-pure); font-weight: 500; font-size: 0.95rem; }
+.btn-index { color: var(--accent); font-family: var(--font-luxury); font-size: 0.8rem; opacity: 0.7; }
+
+/* VISOR CINEMÁTICO */
+.cinematic-viewer {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px;
+}
+
+.media-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #000;
+}
+
+.media-container video, .media-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-premium);
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(6,7,9,0.2) 0%, rgba(6,7,9,0.85) 100%);
+    z-index: 2;
+}
+
+/* CONTENIDO DE TEXTO E INDICADORES CORPORATIVOS */
+.corporate-content {
+    position: relative;
+    z-index: 3;
+    max-width: 850px;
+}
+
+.location-ticker {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.state-title {
+    font-family: var(--font-luxury);
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.state-description {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 45px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* DASHBOARD DE MÉTRICAS */
+.metrics-dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.metric-card {
+    background-color: var(--card-surface);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.m-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.m-value {
+    font-family: var(--font-luxury);
+    font-size: 1.8rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* RESPONSIVIDAD PARA PANTALLAS MÁS PEQUEÑAS */
+@media (max-width: 1024px) {
+    .premium-dashboard { flex-direction: column; }
+    .sidebar { width: 100%; height: 300px; }
+    .cinematic-viewer { padding: 30px; }
+    .state-title { font-size: 2.3rem; }
+    .metrics-dashboard { grid-template-columns: 1fr; gap: 15px; }
+}
+/* Contenedor de la fila para alinear los dos elementos lado a lado */
+.state-row-container {
+    display: flex;
+    align-items: stretch; /* Hace que ambos elementos tengan la misma altura */
+    gap: 8px; /* Espacio de separación entre el botón y el card de enlace */
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+/* Ajuste del botón original para que comparta el espacio de la fila */
+.state-item-btn {
+    flex: 1; /* Ocupa todo el espacio sobrante a la izquierda */
+    margin-bottom: 0 !important; /* Eliminamos el margen antiguo */
+}
+
+/* Estilo premium para la mini tarjeta de enlace de al lado */
+.side-link-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    width: 55px; /* Ancho fijo para el botón lateral */
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Efecto hover interactivo al pasar el cursor sobre el enlace lateral */
+.side-link-card:hover {
+    background-color: var(--accent); /* Se tiñe de color Oro Premium */
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+}
+
+.side-link-card .card-icon {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.side-link-card:hover .card-icon {
+    transform: scale(1.2); /* Pequeño pulso en el icono */
+}
+
+  </style>
+      <!-- LLAMADA AL MISMO SCRIPT UNIFICADO -->
+    <script src="src/components/Header-Footer/Header-Footer-main.js" defer></script>
+    <script>
+  // Base de datos de los 32 Estados Federativos de México con Contenido Premium Dedicado
+const estadosDeMexico = [
+    { id: "ags", name: "Aguascalientes", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Aguascalientes es un dinámico estado y capital del centronorte de México, famoso por sus tradicionales aguas termales e historia colonial. Es mundialmente reconocido por celebrar la Feria Nacional de San Marcos, la festividad más grande e importante del país.", projects: "14", investment: "$420M USD", jobs: "3,800" , linkUrl: "/No_disponible"},
+    { id: "bc", name: "Baja California", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es un estado fronterizo rodeado por el Océano Pacífico y el Mar de Cortés, famoso por sus espectaculares paisajes costeros. Es un referente mundial por su vibrante gastronomía, la producción del mejor vino mexicano en el Valle de Guadalupe y su dinámica vida fronteriza en Tijuana.", projects: "28", investment: "$1.1B USD", jobs: "9,200" , linkUrl: "/No_disponible"},
+    { id: "bcs", name: "Baja California Sur", type: "video", url: "https://oirepmimexicano.gieovannyfrias.com/Video/Portada_mexico.webm", desc: "Es un paraíso turístico entre el Pacífico y el Mar de Cortés, famoso por sus playas cristalinas, oasis coloniales y el avistamiento de ballenas. Destaca a nivel mundial por el lujo y la naturaleza de Los Cabos, el encanto de su capital La Paz y sus hermosos Pueblos Mágicos.", projects: "11", investment: "$890M USD", jobs: "2,400" , linkUrl: "/No_disponible"},
+    { id: "camp", name: "Campeche", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es un estado del sureste mexicano frente al Golfo de México, famoso por su selva Maya y su amurallada capital histórica. Destaca a nivel mundial por sus imponentes zonas arqueológicas como Calakmul y su arquitectura colonial que servía de defensa contra los ataques de piratas.", projects: "6", investment: "$550M USD", jobs: "1,500" , linkUrl: "/No_disponible"},
+    { id: "coah", name: "Coahuila", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es un gigante norteño de desiertos, oasis e historia, famoso por las dunas de Bilbao, el Pueblo Mágico de Parras de la Fuente y su gran producción de vino y fósiles de dinosaurio.", projects: "19", investment: "$780M USD", jobs: "5,100" , linkUrl: "/No_disponible"},
+    { id: "col", name: "Colima", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: " Es un pequeño estado del Pacífico dominado por un imponente volcán activo, conocido por sus playas en Manzanillo, su arqueología y la magia colonial de Comala.", projects: "8", investment: "$390M USD", jobs: "2,100" , linkUrl: "/No_disponible"},
+    { id: "chis", name: "Chiapas", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es una joya del sureste repleta de selvas, cascadas y herencia maya, mundialmente famosa por el majestuoso Cañón del Sumidero, las ruinas de Palenque y el encanto de San Cristóbal de las Casas.", projects: "5", investment: "$180M USD", jobs: "1,200" , linkUrl: "/No_disponible"},
+    { id: "chih", name: "Chihuahua", type: "video", url: "https://oirepmimexicano.gieovannyfrias.com/Video/Portada_mexico.webm", desc: "Es el estado más grande de México, un territorio de imponentes paisajes naturales célebre por las majestuosas Barrancas del Cobre, su ruta en el tren Chepe y su rica cultura vaquera.", projects: "31", investment: "$1.4B USD", jobs: "11,500" , linkUrl: "/No_disponible"},
+    { id: "cdmx", name: "Ciudad de México", type: "image", url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyomNE0GnM0yW_8cUNVIl0t7-aHcyeG9YBMJMG67_X5Q&s=10", desc: "Es la vibrante y cosmopolita capital del país, reconocida globalmente por sus canales prehispánicos en Xochimilco, sus imponentes palacios coloniales y una oferta museística y cultural de nivel mundial.", projects: "54", investment: "$3.2B USD", jobs: "18,400" , linkUrl: "/Ciudad_mexico"},
+    { id: "dur", name: "Durango", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es un territorio norteño de imponentes paisajes montañosos y profundos cañones, famoso por ser la cuna del cine de wéstern en México y por su bellísima capital colonial.", projects: "9", investment: "$290M USD", jobs: "2,300" , linkUrl: "/No_disponible"},
+    { id: "gto", name: "Guanajuato", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es el corazón histórico y cultural del Bajío, mundialmente célebre por sus pintorescas ciudades virreinales, sus coloridos callejones coloniales, antiguas minas y el Festival Internacional Cervantino.", projects: "26", investment: "$1.2B USD", jobs: "8,900" , linkUrl: "/No_disponible"},
+    { id: "gro", name: "Guerrero", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es un vibrante estado sureño de gran herencia cultural y folclor, reconocido globalmente por el triángulo del sol que forman Acapulco, el destino colonial de Taxco y las playas de Ixtapa-Zihuatanejo.", projects: "7", investment: "$410M USD", jobs: "3,100", linkUrl: "/No_disponible"},
+    { id: "hgo", name: "Hidalgo", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es una tierra de contrastes que mezcla bosques de montaña, zonas semidesérticas y tradición minera, famosa por sus prismas basálticos, sus aguas termales en Tolantongo y sus deliciosos pastes.", projects: "12", investment: "$340M USD", jobs: "3,200" , linkUrl: "/No_disponible"},
+    { id: "jal", name: "Jalisco", type: "video", url: "https://oirepmimexicano.gieovannyfrias.com/Video/Portada_mexico.webm", desc: "Es la cuna del folclor mexicano ante el mundo, una rica región occidental famosa por ser la tierra del mariachi, el tequila, la charrería y las hermosas playas de Puerto Vallarta.", projects: "42", investment: "$2.1B USD", jobs: "14,200" , linkUrl: "/No_disponible"},
+    { id: "mex", name: "Estado de México", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es una entidad de enorme riqueza arqueológica y natural que abraza a la capital del país, destacada por las imponentes pirámides de Teotihuacán y el santuario de la mariposa monarca.", projects: "38", investment: "$1.6B USD", jobs: "13,900" , linkUrl: "/No_disponible"},
+    { id: "mich", name: "Michoacán", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es un estado del occidente desbordante de cultura, tradiciones purépechas y paisajes boscosos, mundialmente famoso por su mística celebración del Día de Muertos y sus tradicionales pueblos de artesanos.", projects: "15", investment: "$670M USD", jobs: "4,600" , linkUrl: "/No_disponible"},
+    { id: "mor", name: "Morelos", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es el eterno jardín de México gracias a su clima cálido y primaveral durante todo el año, célebre por sus antiguos conventos del siglo XVI, sus balnearios y las zonas arqueológicas como Xochicalco.", projects: "8", investment: "$210M USD", jobs: "1,900" , linkUrl: "/No_disponible"},
+    { id: "nay", name: "Nayarit", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es un paraíso tropical que combina selva con espectaculares costas, muy reconocido a nivel internacional por los exclusivos desarrollos y playas para surfear de la Riviera Nayarit.", projects: "13", investment: "$980M USD", jobs: "2,800" , linkUrl: "/No_disponible"},
+    { id: "nl", name: "Nuevo León", type: "video", url: "https://oirepmimexicano.gieovannyfrias.com/Video/Portada_mexico.webm", desc: "Es la potencia industrial y de negocios del noreste del país, distinguida por el perfil vanguardista de Monterrey, el imponente Cerro de la Silla y los cañones del Parque Nacional Cumbres.", projects: "49", investment: "$3.5B USD", jobs: "16,800" , linkUrl: "/No_disponible"},
+    { id: "oax", name: "Oaxaca", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es el alma cultural y gastronómica de México, reconocida en todo el mundo por sus coloridas tradiciones como la Guelaguetza, sus zonas prehispánicas como Monte Albán y su incomparable cocina tradicional.", projects: "11", investment: "$820M USD", jobs: "2,900", linkUrl: "/No_disponible"},
+    { id: "pue", name: "Puebla", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es una joya colonial custodiada por imponentes volcanes, mundialmente famosa por su exquisita gastronomía barroca —como el mole y los chiles en nogada— y su hermosa arquitectura decorada con talavera.", projects: "22", investment: "$910M USD", jobs: "6,400", linkUrl: "/No_disponible"},
+    { id: "qro", name: "Querétaro", type: "video", url: "https://oirepmimexicano.gieovannyfrias.com/Video/Portada_mexico.webm", desc: "Es una próspera entidad del Bajío de gran peso en la independencia nacional, famosa por sus majestuosas misiones franciscanas en la Sierra Gorda y su ruta de vino y queso a la sombra del monolito de la Peña de Bernal.", projects: "29", investment: "$1.5B USD", jobs: "7,300", linkUrl: "/No_disponible"},
+    { id: "qr", name: "Quintana Roo", type: "video", url: "https://oirepmimexicano.gieovannyfrias.com/Video/Portada_mexico.webm", desc: "Es la joya turística del Caribe Mexicano y cuna de la civilización maya, mundialmente célebre por el azul turquesa de las playas de Cancún y la Riviera Maya, sus místicos cenotes y las ruinas costeras de Tulum.", projects: "35", investment: "$2.4B USD", jobs: "11,200", linkUrl: "/No_disponible"},
+    { id: "slp", name: "San Luis Potosí", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es un estado de asombrosos contrastes geográficos, reconocido por la arquitectura de cantera de su capital y los espectaculares paisajes naturales, cascadas turquesas y el jardín surrealista de Edward James en la Huasteca Potosina.", projects: "16", investment: "$620M USD", jobs: "4,200" , linkUrl: "/No_disponible"},
+    { id: "sin", name: "Sinaloa", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es una fértil potencia agrícola y pesquera de cara al Golfo de California, famosa por las playas y el alegre carnaval de Mazatlán, su gastronomía marina basada en mariscos frescos y el origen de la música de banda.", projects: "12", investment: "$440M USD", jobs: "3,500" , linkUrl: "/No_disponible"},
+    { id: "son", name: "Sonora", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es un vasto estado norteño donde el desierto se encuentra directamente con el Mar de Cortés, célebre por la belleza costera de San Carlos, su deliciosa gastronomía basada en cortes de carne de alta calidad y la rica cultura del pueblo Yaqui.", projects: "15", investment: "$1.1B USD", jobs: "4,800", linkUrl: "/No_disponible"},
+    { id: "tab", name: "Tabasco", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es un edén tropical cubierto de ríos, lagunas y selva en el sureste del país, famoso por ser la cuna de la milenaria cultura olmeca y sus monumentales cabezas de piedra, así como por sus fincas productoras de cacao.", projects: "10", investment: "$930M USD", jobs: "3,900", linkUrl: "/No_disponible"},
+    { id: "tamps", name: "Tamaulipas", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es un extenso estado fronterizo y costero con gran actividad comercial hacia el norte, destacado por la belleza natural de la Biósfera de El Cielo, su música de huapango y las playas del Golfo de México como Miramar.", projects: "18", investment: "$790M USD", jobs: "5,300", linkUrl: "/No_disponible"},
+    { id: "tlax", name: "Tlaxcala", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es el estado más pequeño del país, dueño de una inmensa riqueza histórica y colonial, muy reconocido por el místico espectáculo veraniego en su Santuario de las Luciérnagas y las coloridas alfombras de aserrín de Huamantla.", projects: "6", investment: "\$140M USD", jobs: "1,800" , linkUrl: "/No_disponible"},
+    { id: "ver", name: "Veracruz", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es una alegre franja costera repleta de folclor, música y tradición musical caribeña, famosa por ser la puerta histórica de México, el espectacular Carnaval del puerto, el misticismo de Catemaco y la herencia prehispánica de El Tajín.", type: "video", url: "https://oirepmimexicano.gieovannyfrias.com/Video/Portada_mexico.webm", desc: "Es una alegre franja costera repleta de folclor, música y tradición musical caribeña, famosa por ser la puerta histórica de México, el espectacular Carnaval del puerto, el misticismo de Catemaco y la herencia prehispánica de El Tajín.", projects: "24", investment: "\$850M USD", jobs: "5,200", linkUrl: "/No_disponible"},
+    { id: "zac", name: "Zacatecas", type: "image", url: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000", desc: "Es una legendaria tierra minera esculpida en cantera rosa en el centronorte del país, famosa por su bellísima e histórica capital colonial, su teleférico que cruza el cielo y la imponente zona arqueológica de La Quemada.", projects: "7", investment: "\$260M USD", jobs: "2,100", linkUrl: "/No_disponible"}
+];
+
+// Captura de contenedores y elementos de control del DOM
+const listContainer = document.getElementById('states-list');
+const searchInput = document.getElementById('search-state');
+const mediaViewport = document.getElementById('media-viewport');
+const titleEl = document.getElementById('state-title');
+const descEl = document.getElementById('state-desc');
+const regionEl = document.getElementById('current-region');
+
+// Captura de elementos para el tablero de métricas premium
+const mProjects = document.getElementById('metric-projects');
+const mInvestment = document.getElementById('metric-investment');
+const mJobs = document.getElementById('metric-jobs');
+
+// Función interactiva para renderizar la lista lateral de los 32 estados
+function renderList(filteredStates) {
+    listContainer.innerHTML = '';
+    
+    filteredStates.forEach((state, index) => {
+        // 1. Creamos el contenedor de la fila
+        const rowContainer = document.createElement('div');
+        rowContainer.className = 'state-row-container';
+        
+        // 2. Formato numérico a dos dígitos (01, 02...)
+        const displayIndex = String(index + 1).padStart(2, '0');
+        
+        // 3. Creamos el botón principal de la izquierda
+        const mainBtn = document.createElement('button');
+        mainBtn.className = 'state-item-btn';
+        mainBtn.setAttribute('data-id', state.id);
+        mainBtn.innerHTML = '<span class="btn-name">' + state.name + '</span><span class="btn-index">' + displayIndex + '</span>';
+        
+        // Asignamos el evento de clic para el fondo cinematográfico
+        mainBtn.addEventListener('click', () => selectState(state.id));
+        rowContainer.appendChild(mainBtn);
+        
+        // 4. Si el estado tiene un enlace, creamos la tarjeta lateral de forma 100% segura
+        if (state.linkUrl && state.linkUrl !== "") {
+            const sideLink = document.createElement('a');
+            sideLink.className = 'side-link-card';
+            sideLink.target = '_blank';
+            sideLink.href = state.linkUrl; // <-- Aquí se asigna la URL directamente sin peligro de errores de texto
+            sideLink.title = 'Abrir portal de ' + state.name;
+            sideLink.innerHTML = '<span class="card-icon">🔗</span>';
+            
+            rowContainer.appendChild(sideLink);
+        }
+        
+        // 5. Inyectamos la fila armada al contenedor principal
+        listContainer.appendChild(rowContainer);
+    });
+}
+
+
+
+// Función encargada del intercambio dinámico multimedia y transiciones de texto
+function selectState(id) {
+ // Dentro de tu función selectState(id) existente:
+document.querySelectorAll('.state-item-btn').forEach(btn => {
+    btn.classList.remove('active');
+    // Si coincide el atributo, añadimos la iluminación dorada
+    if(btn.getAttribute('data-id') === id) btn.classList.add('active'); 
+});
+
+
+    const state = estadosDeMexico.find(s => s.id === id);
+    if (!state) return;
+
+    // Efecto cinematicout: Ocultamiento sutil previo a la carga de datos
+    const texts = [titleEl, descEl, regionEl, mProjects, mInvestment, mJobs];
+    texts.forEach(el => { 
+        el.style.opacity = '0'; 
+        el.style.transform = 'translateY(10px)'; 
+        el.style.transition = 'all 0.3s ease'; 
+    });
+
+    setTimeout(() => {
+        // Asignación de nueva metadata e indicadores financieros del estado
+        titleEl.textContent = state.name;
+        descEl.textContent = state.desc;
+        regionEl.textContent = state.name.toUpperCase();
+        mProjects.textContent = state.projects;
+        mInvestment.textContent = state.investment;
+        mJobs.textContent = state.jobs;
+
+        // Reconstrucción del viewport para alternar eficientemente entre Video y Foto
+        const overlay = '<div class="gradient-overlay"></div>';
+        if (state.type === "video") {
+            mediaViewport.innerHTML = `${overlay}<video id="bg-video" autoplay loop muted playsinline src="${state.url}"></video>`;
+        } else {
+            mediaViewport.innerHTML = `${overlay}<img id="bg-img" src="${state.url}" alt="${state.name} Corporativo">`;
+        }
+
+        // Efecto cinematicin: Aparición fluida y elegante con curvas de aceleración de lujo
+        texts.forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+            el.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+        });
+    }, 300);
+}
+
+// Motor de búsqueda predictivo en tiempo real integrado a la interfaz
+searchInput.addEventListener('input', (e) => {
+    const value = e.target.value.toLowerCase();
+    const filtered = estadosDeMexico.filter(s => s.name.toLowerCase().includes(value));
+    renderList(filtered);
+});
+
+// Inicialización automática del Hub Corporativo al desplegarse el DOM
+window.addEventListener('DOMContentLoaded', () => {
+    renderList(estadosDeMexico);
+    // Carga por defecto el primer estado del mapa (Aguascalientes) para inicializar la experiencia visual
+    if(estadosDeMexico.length > 0) {
+        selectState(estadosDeMexico[0].id);
+    }
+});
+
+  </script>
+</body>
+</html>
