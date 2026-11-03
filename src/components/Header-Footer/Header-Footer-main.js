@@ -48,10 +48,11 @@
         
         /* Logo de Alta Gama */
         .corporate-logo {
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            letter-spacing: 3px;
+               display: flex;
+    text-decoration: none;
+    letter-spacing: 3px;
+    align-items: center;
+    flex-wrap: wrap;
         }
         .logo-top {
             font-family: var(--font-title);
@@ -297,7 +298,7 @@
         if (headerContainer) {
             headerContainer.innerHTML = `
                 <div class="header-container">
-                    <a href="#inicio" class="corporate-logo">
+                    <a href="#inicio" class="corporate-logo"><img src="https://oirepmimexicano.gieovannyfrias.com/Imagenes/Logo_transparente.webp" style="width: 100px; height: 60px;">
                         <span class="logo-top">OIREPMI<span></span></span>
                         <span class="logo-bottom">MEXICANO</span>
                     </a>
