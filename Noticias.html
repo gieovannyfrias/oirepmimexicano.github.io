@@ -1,0 +1,803 @@
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+      <link rel="icon" href="https://oirepmimexicano.gieovannyfrias.com/Imagenes/Logo.webp" type="image/x-icon">
+    <title>Noticias | Nacional</title>
+<meta name="description" content="Enterate de todo lo que pasa en toda la republica mexicana de lo mas reciente de ultimo momento.">
+      <!-- Control de Indexación y Canónicas -->
+    <link rel="canonical" href="https://oirepmimexicano.gieovannyfrias.com">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+      <!-- Integración con Teléfonos Inteligentes (UI/UX) -->
+    <meta name="theme-color" content="#1a1a1a"> <!-- Reemplaza con el color principal de tu web -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!--    link de estilo de fuente de letra-->
+      <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+<!-- Seguridad de Privacidad (No envía datos de origen a enlaces externos) -->
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<!-- Pistas de Rendimiento para Redes Móviles (Client Hints) -->
+<meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width, Save-Data, ECT">
+
+<!-- Si el artículo tiene traducciones (SEO Internacional) -->
+<link rel="alternate" hreflang="en" href="https://oirepmimexicano.gieovannyfrias.com">
+<link rel="alternate" hreflang="x-default" href="https://oirepmimexicano.gieovannyfrias.com">
+
+<!-- Control de Caché (Para noticias de última hora con actualizaciones frecuentes) -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <!-- Open Graph / Metadatos para Redes Sociales (Facebook, WhatsApp) -->
+    <meta property="og:type" content="WebSite">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Noticias">
+    <meta property="og:title" content="Noticias | Nacional">
+    <meta property="og:description" content="Enterate de todo lo que pasa en toda la republica mexicana de lo mas reciente de ultimo momento.">
+    <meta property="og:url" content="https://oirepmimexicano.gieovannyfrias.com/Noticias">
+    <meta property="og:image" content="https://oirepmimexicano.gieovannyfrias.com/Imagenes/Logo.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Noticias | Nacional">
+
+    <!-- Tarjetas Exclusivas para Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Noticias">
+    <meta name="twitter:title" content="Noticias | Nacional">
+    <meta name="twitter:description" content="Enterate de todo lo que pasa en toda la republica mexicana de lo mas reciente de ultimo momento.">
+    <meta name="twitter:image" content="https://oirepmimexicano.gieovannyfrias.com/Imagenes/Logo.webp">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D046WDR74N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D046WDR74N');
+</script>
+</head>
+<body>
+<header id="site-header"></header>
+  <div class="container">
+    <div class="section_1">
+      <div class="brand-section">
+        <h1>Nexus Business Intelligence</h1>
+        <p>El pulso macroeconómico y tecnológico de la industria en México.</p>
+      </div>
+<!-- Contenedor maestro de navegación premium con controles -->
+<div class="premium-tabs-wrapper">
+  <!-- Botón de desplazamiento izquierdo -->
+  <button class="scroll-arrow arrow-left" id="arrow-left" onclick="slideTabs('left')">
+    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+  </button>
+
+  <!-- Contenedor con la máscara difuminada -->
+  <div class="tabs-scroll-container">
+    <nav class="filter-tabs" id="filter-tabs-nav">
+      <button class="tab-btn active" onclick="filterNews('todos', this)">Todos</button>
+      <button class="tab-btn" onclick="filterNews('nearshoring', this)">Nearshoring</button>
+      <button class="tab-btn" onclick="filterNews('tech', this)">Tecnología profunda</button>
+      <button class="tab-btn" onclick="filterNews('fintech', this)">FinTech</button>
+      <button class="tab-btn" onclick="filterNews('ia', this)">Inteligencia Artificial</button>
+      <button class="tab-btn" onclick="filterNews('cloud', this)">Infraestructura en la nube</button>
+      <button class="tab-btn" onclick="filterNews('cyber', this)">Ciberseguridad</button>
+      <button class="tab-btn" onclick="filterNews('saas', this)">SaaS Corp</button>
+      <button class="tab-btn" onclick="filterNews('logistica', this)">Logística 5G</button>
+      <button class="tab-btn" onclick="filterNews('energia', this)">Energía ESG</button>
+      <button class="tab-btn" onclick="filterNews('automotriz', this)">Automotriz</button>
+      <button class="tab-btn" onclick="filterNews('banca', this)">Banca Digital</button>
+      <button class="tab-btn" onclick="filterNews('startups', this)">Startups</button>
+      <button class="tab-btn" onclick="filterNews('vanguardia', this)">Vanguardia</button>
+      <button class="tab-btn" onclick="filterNews('capital', this)">Capital de riesgo</button>
+      <button class="tab-btn" onclick="filterNews('infraestructura', this)">Infraestructura</button>
+      <button class="tab-btn" onclick="filterNews('aeroespacial', this)">Aeroespacial</button>
+      <button class="tab-btn" onclick="filterNews('talento', this)">Talento Tech</button>
+      <button class="tab-btn" onclick="filterNews('queretaro', this)">Data Hub QRO</button>
+      <button class="tab-btn" onclick="filterNews('norte', this)">Corredor Norte</button>
+    </nav>
+  </div>
+
+  <!-- Botón de desplazamiento derecho -->
+  <button class="scroll-arrow arrow-right" id="arrow-right" onclick="slideTabs('right')">
+    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+  </button>
+</div>
+      <input 
+  type="text" 
+  id="news-search-input" 
+  placeholder="Buscar noticias corporativas..." 
+  onkeyup="searchNews(this.value)"
+  style="background: var(--bg-surface); border: 1px solid var(--border-premium); color: #fff; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.85rem; outline: none; width: 250px; transition: border-color 0.2s;"
+  onfocus="this.style.borderColor='var(--accent-cyan)'"
+  onblur="this.style.borderColor='var(--border-premium)'"
+>
+    </div>
+
+    <main class="news-layout">
+      <!-- 1. Noticia Destacada Principal -->
+      <section class="featured-story" id="featured-box" onclick="openModal('n1')">
+        <div class="meta-tag">⚡ EXCLUSIVA CORPORATIVA</div>
+        <h2>México consolida su posición como Hub líder de IA y Nearshoring Industrial</h2>
+        <p>Inversiones de capital de riesgo y la expansión de infraestructura de centros de datos de alta escala aceleran la transformación digital corporativa en el país.</p>
+        <div class="card-footer" style="width: 100%;">
+          <span>Por Redacción Nexus • CDMX</span>
+          <span class="read-more">Análisis Completo →</span>
+        </div>
+      </section>
+
+      <!-- Grid Protegido para las siguientes 9 notas (Total 10) -->
+      <div class="news-grid">
+        
+        <!-- 2 -->
+        <div class="news-card" data-category="nearshoring" onclick="openModal('n2')">
+          <div>
+            <span class="meta-tag">Estrategia</span>
+            <h3>Inversión masiva en Monterrey reactiva parques industriales</h3>
+            <p>San Pedro Garza García centraliza nuevas sedes de operaciones corporativas enfocadas en logística automatizada.</p>
+          </div>
+          <div class="card-footer"><span>Hace 2 horas</span><span class="read-more">Ver más →</span></div>
+        </div>
+
+        <!-- 3 -->
+        <div class="news-card" data-category="tech" onclick="openModal('n3')">
+          <div>
+            <span class="meta-tag tech">Deep Tech</span>
+            <h3>Guadalajara duplica su capacidad de desarrollo Cloud</h3>
+            <p>El ecosistema tecnológico en Zapopan impulsa el talento enfocado en modelos fundacionales de IA corporativa.</p>
+          </div>
+          <div class="card-footer"><span>Hace 5 horas</span><span class="read-more">Ver más →</span></div>
+        </div>
+
+        <!-- 4 -->
+        <div class="news-card" data-category="nearshoring" onclick="openModal('n4')">
+          <div>
+            <span class="meta-tag">Infraestructura</span>
+            <h3>Querétaro expande red de Centros de Datos de Multi-Escala</h3>
+            <p>Nuevas inversiones de infraestructura de nube híbrida aseguran redundancia tecnológica para firmas de FinTech.</p>
+          </div>
+          <div class="card-footer"><span>Hace 1 día</span><span class="read-more">Ver más →</span></div>
+        </div>
+
+        <!-- 5 -->
+        <div class="news-card" data-category="tech" onclick="openModal('n5')">
+          <div>
+            <span class="meta-tag tech">FinTech</span>
+            <h3>CDMX lidera transacciones de capital institucional digital</h3>
+            <p>Nuevas regulaciones del Banco de México agilizan transacciones automatizadas transfronterizas entre corporativos.</p>
+          </div>
+          <div class="card-footer"><span>Hace 1 día</span><span class="read-more">Ver más →</span></div>
+        </div>
+
+        <!-- 6 -->
+        <div class="news-card" data-category="nearshoring" onclick="openModal('n6')">
+          <div>
+            <span class="meta-tag">Logística</span>
+            <h3>El corredor industrial de Saltillo adopta robótica automatizada</h3>
+            <p>Empresas transnacionales vinculan gemelos digitales para la optimización de procesos de manufactura pesada.</p>
+             </div>
+          <div class="card-footer"><span>Hace 2 días</span><span class="read-more">Ver más →</span></div>
+        </div>
+
+        <!-- 7 -->
+        <div class="news-card" data-category="tech" onclick="openModal('n7')">
+          <div>
+            <span class="meta-tag tech">Cybersecurity</span>
+            <h3>Consorcio bancario mexicano incrementa escudos cuánticos</h3>
+            <p>Ante el alza operativa, corporativos financieros implementan algoritmos criptográficos avanzados de prevención.</p>
+          </div>
+          <div class="card-footer"><span>Hace 2 días</span><span class="read-more">Ver más →</span></div>
+        </div>
+
+        <!-- 8 -->
+        <div class="news-card" data-category="nearshoring" onclick="openModal('n8')">
+          <div>
+            <span class="meta-tag">Economía</span>
+            <h3>Clúster aeroespacial en Chihuahua expande operaciones globales</h3>
+            <p>La integración de Nearshoring de alta especialización atrae fondos de capital privado de la Unión Europea.</p>
+          </div>
+          <div class="card-footer"><span>Hace 3 días</span><span class="read-more">Ver más →</span></div>
+         </div>
+
+        <!-- 9 -->
+        <div class="news-card" data-category="tech" onclick="openModal('n9')">
+          <div>
+            <span class="meta-tag tech">SaaS</span>
+            <h3>Startups mexicanas levantan ronda Serie B para IA aplicada</h3>
+            <p>Sistemas enfocados en optimizar la productividad contable y de recursos humanos ganan terreno en LatAm.</p>
+          </div>
+          <div class="card-footer"><span>Hace 3 días</span><span class="read-more">Ver más →</span></div>
+        </div>
+
+        <!-- 10 -->
+        <div class="news-card" data-category="nearshoring" onclick="openModal('n10')">
+          <div>
+            <span class="meta-tag">Energía</span>
+            <h3>Tijuana proyecta parques industriales sustentables e híbridos</h3>
+            <p>Consorcios logísticos acuerdan el despliegue de redes solares dedicadas para el abastecimiento de plantas tecnológicas.</p>
+          </div>
+          <div class="card-footer"><span>Hace 4 días</span><span class="read-more">Ver más →</span></div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Componente de Ventana Modal Única -->
+  <div class="modal-overlay" id="newsModal" onclick="closeModal(event)">
+    <div class="modal-window">
+      <button class="close-btn" onclick="forceClose()">&times;</button>
+      <div class="modal-body" id="modal-dynamic-body"></div>
+    </div>
+  </div>
+  
+    <footer id="site-footer"></footer>
+  
+  <style>
+    :root {
+      --bg-base: #020617;
+      --bg-surface: #0f172a;
+      --bg-card: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #64748b;
+      --accent-cyan: #06b6d4;
+      --accent-gold: #eab308;
+      --border-premium: rgba(255, 255, 255, 0.05);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      min-height: 100vh;
+      zoom:75%;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Encabezado */
+    .section_1 {
+      border-bottom: 1px solid var(--border-premium);
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .section_1 { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    }
+
+    .brand-section h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      background: linear-gradient(to right, #fff, var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-section p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 0.25rem;
+    }
+/* Contenedor principal que envuelve pestañas y flechas */
+.premium-tabs-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.tabs-scroll-container {
+  flex: 1;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 0.65rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0.5rem 2rem;
+  scroll-behavior: smooth;
+}
+
+.filter-tabs::-webkit-scrollbar { display: none; }
+
+.tab-btn {
+  flex-shrink: 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-premium);
+  color: var(--text-muted);
+  padding: 0.6rem 1.3rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+  color: #fff;
+  background: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+
+/* ESTILO DE LAS FLECHAS DE NAVEGACIÓN */
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-premium);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  opacity: 0; /* JS controlará su visibilidad inicial */
+  pointer-events: none;
+}
+
+.scroll-arrow.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-arrow:hover {
+  background: #fff;
+  color: var(--bg-base);
+  border-color: #fff;
+}
+
+.scroll-arrow svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.arrow-left { left: 5px; }
+.arrow-right { right: 5px; }
+
+    /* LAYOUT INTELIGENTE ANTI-DISTORSIÓN */
+    .news-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* Noticia Principal Destacada (Ocupa todo el ancho superior) */
+    .featured-story {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.4) 100%);
+      border: 1px solid var(--border-premium);
+      border-radius: 24px;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      min-height: 380px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+    }
+
+    .featured-story:hover {
+      border-color: var(--accent-cyan);
+    }
+
+    /* GRID AUTO-AJUSTABLE DE 3 COLUMNAS PARA LAS OTRAS 9 NOTAS */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .news-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-premium);
+      border-radius: 20px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 260px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+
+    .news-card:hover {
+      border-color: rgba(6, 182, 212, 0.4);
+      transform: translateY(-4px);
+      background: var(--bg-card);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .meta-tag {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .meta-tag.tech { color: var(--accent-cyan); }
+
+    h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 1rem; color: #fff; }
+    h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; color: #fff; line-height: 1.4; }
+    p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255,255,255,0.03);
+      padding-top: 1rem;
+    }
+
+    .read-more { color: var(--accent-cyan); font-weight: 600; }
+
+    /* MODAL PREMIUM SYSTEM */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(2, 6, 23, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .modal-overlay.active { opacity: 1; pointer-events: auto; }
+
+    .modal-window {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-premium);
+      border-radius: 28px;
+      padding: 3.5rem;
+      max-width: 750px;
+      width: 90%;
+      position: relative;
+      transform: scale(0.95) translateY(10px);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-overlay.active .modal-window { transform: scale(1) translateY(0); }
+
+    .close-btn {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-premium);
+      color: var(--text-main);
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .close-btn:hover { background: #ef4444; border-color: #ef4444; }
+    .modal-body h2 { font-size: 2rem; margin-bottom: 1.25rem; }
+    .modal-content-text { color: var(--text-muted); line-height: 1.7; font-size: 1.1rem; }
+  </style>
+<script src="src/components/Header-Footer/Header-Footer-main.js" defer></script>
+  <script>
+    const modalDatabase = {
+      n1: { 
+        tag: "⚡ EXCLUSIVA CORPORATIVA", 
+        title: "México consolida su posición como Hub líder de IA y Nearshoring Industrial", 
+        text: "El auge de la relocalización de cadenas de suministro (Nearshoring) está impulsando una adopción masiva de modelos de Inteligencia Artificial e infraestructura híbrida Cloud en México. Firmas globales de tecnología reportan un incremento del 45% en la demanda de almacenamiento cloud de nivel empresarial en centros de datos ubicados en Querétaro y el Estado de México, consolidando al país como la punta de lanza digital de América Latina.",
+        img: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000",
+        videoUrl: "https://oirepmimexicano.gieovannyfrias.com/Video/Portada_mexico.webm" // Video demo corporativo alternable
+      },
+      n2: { 
+        tag: "ESTRATEGIA INDUSTRIAL", 
+        title: "Inversión masiva en Monterrey reactiva parques industriales", 
+        text: "Con la inyección de capital extranjero en el norte de México, los parques industriales de Nuevo León están migrando hacia ecosistemas automatizados mediante IoT y redes privadas 5G. San Pedro Garza García se sitúa a la vanguardia logística, permitiendo a los corporativos internacionales monitorear cadenas de distribución en tiempo real con cero latencia hacia los Estados Unidos.",
+        img: "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+        videoUrl: null 
+      },
+      n3: { 
+        tag: "DEEP TECH & ECOSYSTEMS", 
+        title: "Guadalajara duplica su capacidad de desarrollo Cloud", 
+        text: "El Silicon Valley mexicano registra una evolución crítica hacia el 'Deep Tech'. Empresas situadas en el corredor tecnológico de Zapopan han comenzado a entrenar algoritmos de LLM estructurados específicamente para la validación de transacciones en la banca mexicana, lo que proyecta un crecimiento del empleo de alta especialización de un 30% para finales de año.",
+        img: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000",
+        videoUrl: null
+      },
+      n4: { 
+        tag: "INFRAESTRUCTURA DE DATOS", 
+        title: "Querétaro expande red de Centros de Datos de Multi-Escala", 
+        text: "La región de Querétaro se ratifica como la capital del almacenamiento de datos en la región. Nuevos campus hiper-escala han abierto módulos dedicados para firmas FinTech nacionales, garantizando un ecosistema de respuesta con tolerancia a fallas críticas del 99.999% bajo estándares internacionales.",
+        img: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000",
+        videoUrl: null
+      },
+      n5: { 
+        tag: "FINTECH & REGULACIÓN", 
+        title: "CDMX lidera transacciones de capital institucional digital", 
+        text: "La Ciudad de México afianza su infraestructura financiera a través de nuevas normativas para la gobernanza de activos digitales y transferencias interbancarias automatizadas de alta velocidad. Esto permitirá reducir el tiempo de compensación comercial con mercados globales a fracciones de segundo.",
+        img: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000",
+        videoUrl: null
+      },
+      n6: { 
+        tag: "LOGÍSTICA AUTOMATIZADA", 
+        title: "Corredor industrial de Saltillo adopta robótica automatizada", 
+        text: "Las líneas de ensamble inteligente en el estado de Coahuila han implementado gemelos digitales que corren sobre nubes privadas. Esta arquitectura permite predecir cuellos de botella operativos antes de que ocurran en el plano físico, optimizando los costos de exportación logística.",
+        img: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000",
+        videoUrl: null
+      },
+      n7: { 
+        tag: "CYBERSECURITY REPORT", 
+        title: "Consorcio bancario mexicano incrementa escudos cuánticos", 
+        text: "Ante la migración masiva de bases de datos empresariales a entornos cloud, las principales firmas financieras de la CDMX han desplegado llaves criptográficas post-cuánticas de desarrollo nativo. Esta capa extra blinda las operaciones bancarias de la administración corporativa contra vulnerabilidades externas.",
+        img: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000",
+        videoUrl: null
+      },
+      n8: { 
+        tag: "DESARROLLO AEROESPACIAL", 
+        title: "Clúster aeroespacial en Chihuahua expande operaciones globales", 
+        text: "La inversión de manufactura avanzada y diseño de componentes de precisión en Chihuahua ha atraído un nuevo fondo soberano europeo. El proyecto contempla integrar analítica de datos predictiva en los sistemas de calidad industrial para acelerar los despachos hacia Norteamérica.",
+        img: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000",
+        videoUrl: null
+      },
+      n9: { 
+        tag: "STARTUP ECOSYSTEMS", 
+        title: "Startups mexicanas levantan ronda Serie B para IA aplicada", 
+        text: "El ecosistema emprendedor enfocado en el sector B2B de software empresarial sigue rompiendo récords de financiamiento. Las nuevas plataformas automatizan de manera inteligente flujos complejos de recursos humanos y auditorías fiscales internas para grandes corporaciones en el territorio mexicano.",
+        img: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000",
+        videoUrl: null
+      },
+      n10: { 
+        tag: "SUSTENTABILIDAD ENERGÉTICA", 
+        title: "Tijuana proyecta parques industriales sustentables e híbridos", 
+        text: "Grandes desarrolladores de infraestructura en Baja California firmaron un despliegue de microrredes de energía limpia dedicadas a suministrar energía a centros de cómputo y plantas de desarrollo de hardware. Esta medida mitiga la huella de carbono industrial, alineándose con metas ESG globales.",
+        img: "https://lh3.googleusercontent.com/d/1Br8FV5oW3aXr_bhwoGZZhe43z6boS6Ug=w1000",
+        videoUrl: null
+      }
+    };
+
+    // Variable global para controlar la categoría de filtrado activa
+    let currentCategory = 'todos';
+
+    // ==========================================================================
+    // SISTEMA DE CONTROL DE MODAL MULTIMEDIA
+    // ==========================================================================
+    function openModal(id) {
+      const data = modalDatabase[id];
+      if (!data) return; // Validación de seguridad por si el ID no existe
+      
+      const body = document.getElementById('modal-dynamic-body');
+      
+      // Construir contenedor de multimedia dinámico (Imagen o Video si existe)
+      let mediaHTML = '';
+      if (data.videoUrl) {
+        mediaHTML = `
+          <video controls style="width:100%; max-height:300px; border-radius:12px; margin-bottom:1.5rem; background:#000;" autoplay muted>
+            <source src="${data.videoUrl}" type="video/mp4">
+            Tu navegador no soporta reproducción de video.
+          </video>
+        `;
+      } else if (data.img) {
+        mediaHTML = `
+          <img src="${data.img}" alt="${data.title}" style="width:100%; max-height:280px; object-fit:cover; border-radius:12px; margin-bottom:1.5rem; border:1px solid rgba(255,255,255,0.05);">
+        `;
+      }
+
+      // Renderizado del HTML en el modal de forma limpia
+      body.innerHTML = `
+        <div class="meta-tag" style="margin-bottom: 1rem;">${data.tag}</div>
+        ${mediaHTML}
+        <h2>${data.title}</h2>
+        <div class="modal-content-text">${data.text}</div>
+        
+        <!-- Contenedor del Botón con Icono -->
+        <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+          <button id="btnCompartirSeguro" style="display: inline-flex; align-items: center; gap: 8px; background-color: #04AA6D; color: white; padding: 10px 18px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-family: Arial, sans-serif;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            Compartir noticia
+          </button>
+        </div>
+      `;
+      
+      document.getElementById('newsModal').classList.add('active');
+
+      // Asignación limpia del evento clic tras comprobar que el elemento existe
+      const btn = document.getElementById('btnCompartirSeguro');
+      if (btn) {
+        btn.onclick = function() {
+          ejecutarCopiadoSeguro(data);
+        };
+      }
+    }
+
+    // SISTEMA DE CONTROL DE COPIADO CORREGIDO Y SEPARADO
+    function ejecutarCopiadoSeguro(data) {
+      const urlFijaDelSitio = "https://oirepmimexicano.gieovannyfrias.com/Noticias"; 
+      const textoParaCopiar = `*${data.title}*\n\n${data.text}\n\nLee más aquí: ${urlFijaDelSitio}`;
+
+      // 1. Menú nativo (Dispositivos móviles compatibles)
+      if (navigator.share) {
+        navigator.share({
+          title: data.title,
+          text: data.text.substring(0, 100) + '...',
+          url: urlFijaDelSitio
+        }).then(() => console.log('Compartido con éxito'))
+          .catch(err => console.log('Menú de compartir cerrado'));
+        return; 
+      }
+
+      // 2. Respaldo mecánico absoluto (Textarea seguro para archivos locales e inseguros)
+      const elementoTemporal = document.createElement('textarea');
+      elementoTemporal.value = textoParaCopiar;
+      elementoTemporal.style.position = 'fixed';
+      elementoTemporal.style.left = '-9999px';
+      document.body.appendChild(elementoTemporal);
+      
+      elementoTemporal.select();
+      elementoTemporal.setSelectionRange(0, 99999);
+
+      try {
+        document.execCommand('copy');
+        alert('¡Contenido de la noticia copiado al portapapeles!');
+      } catch (err) {
+        alert('No se pudo copiar automáticamente. Copia el texto desde la pantalla.');
+      }
+
+      document.body.removeChild(elementoTemporal);
+    }
+
+
+    function forceClose() { 
+      // Al cerrar, detenemos elementos multimedia limpiando el contenedor
+      document.getElementById('newsModal').classList.remove('active'); 
+      setTimeout(() => { document.getElementById('modal-dynamic-body').innerHTML = ''; }, 400);
+    }
+    
+    function closeModal(e) { 
+      if (e.target.classList.contains('modal-overlay')) { forceClose(); } 
+    }
+
+    // ==========================================================================
+    // MOTOR DE BÚSQUEDA Y FILTRADO INTEGRADO (PREVIENE DISTORSIÓN)
+    // ==========================================================================
+    function filterNews(category, button) {
+      if (button) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+      }
+      currentCategory = category;
+      executeSearchFilter(); // Ejecutar evaluación cruzada
+    }
+
+    // Función para invocar el buscador dinámico por teclado (vía input text)
+    function searchNews(keyword) {
+      executeSearchFilter(keyword.toLowerCase().trim());
+    }
+
+    // Algoritmo principal de renderizado combinado (Filtro + Buscador)
+    function executeSearchFilter(term = '') {
+      const cards = document.querySelectorAll('.news-card');
+      const featured = document.getElementById('featured-box');
+      
+      // Obtener el valor del buscador directamente si no se pasa como parámetro
+      const searchInput = document.getElementById('news-search-input');
+      const query = term || (searchInput ? searchInput.value.toLowerCase().trim() : '');
+
+      cards.forEach(card => {
+        const categoryMatch = (currentCategory === 'todos' || card.getAttribute('data-category') === currentCategory);
+        
+        // El motor evalúa coincidencias exactas en títulos, párrafos y tags del bloque
+        const textContent = card.innerText.toLowerCase();
+        const searchMatch = textContent.includes(query);
+
+        if (categoryMatch && searchMatch) {
+               card.style.display = 'flex'; // Mantiene la consistencia del Grid CSS anti-distorsión
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Validar visualización de la tarjeta destacada principal frente a la búsqueda
+      const featuredText = featured.innerText.toLowerCase();
+      const featuredCategory = currentCategory === 'todos';
+      
+      if (featuredText.includes(query) && featuredCategory) {
+        featured.style.display = 'flex';
+        featured.style.opacity = (query !== '') ? '0.5' : '1';
+      } else {
+        featured.style.display = 'none';
+      }
+    }
+      // Control de desplazamiento por clic para las 20 categorías
+    const tabsNav = document.getElementById('filter-tabs-nav');
+    const arrowLeft = document.getElementById('arrow-left');
+    const arrowRight = document.getElementById('arrow-right');
+
+    function slideTabs(direction) {
+      // Calcula el ancho visible actual de la pantalla para saber cuánto avanzar
+      const scrollAmount = tabsNav.clientWidth * 0.6; 
+      
+      if (direction === 'left') {
+        tabsNav.scrollLeft -= scrollAmount;
+      } else {
+        tabsNav.scrollLeft += scrollAmount;
+      }
+    }
+
+    // Monitorear el progreso del scroll para prender o apagar las flechas
+    function updateArrowVisibility() {
+      const scrollLeft = tabsNav.scrollLeft;
+      // Ancho total desplazable menos el espacio visible en pantalla
+      const maxScrollLeft = tabsNav.scrollWidth - tabsNav.clientWidth;
+
+      // Condición Flecha Izquierda: Se muestra solo si nos hemos movido del inicio
+      if (scrollLeft > 5) {
+        arrowLeft.classList.add('visible');
+      } else {
+        arrowLeft.classList.remove('visible');
+      }
+
+      // Condición Flecha Derecha: Se muestra solo si no hemos tocado el borde final
+      if (scrollLeft < maxScrollLeft - 5) {
+        arrowRight.classList.add('visible');
+      } else {
+        arrowRight.classList.remove('visible');
+      }
+    }
+
+    // Escuchar el evento de desplazamiento e inicializar al cargar la página
+    tabsNav.addEventListener('scroll', updateArrowVisibility);
+    window.addEventListener('resize', updateArrowVisibility);
+    
+    // Ejecutar una validación de arranque inmediato para pintar la flecha derecha si se desborda
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(updateArrowVisibility, 300);
+    });
+  </script>
+</body>
+</html>

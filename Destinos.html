@@ -1,0 +1,1183 @@
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+      <link rel="icon" href="https://oirepmimexicano.gieovannyfrias.com/Imagenes/Logo.webp" type="image/x-icon">
+    <title>Destinos | Eventos, conciertos, proyectos, locales y empresas</title>
+<meta name="description" content="Conoce todos los lugares en toda la republica mexicana.">
+      <!-- Control de Indexación y Canónicas -->
+    <link rel="canonical" href="https://oirepmimexicano.gieovannyfrias.com">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+      <!-- Integración con Teléfonos Inteligentes (UI/UX) -->
+    <meta name="theme-color" content="#1a1a1a"> <!-- Reemplaza con el color principal de tu web -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!--    link de estilo de fuente de letra-->
+      <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+<!-- Seguridad de Privacidad (No envía datos de origen a enlaces externos) -->
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<!-- Pistas de Rendimiento para Redes Móviles (Client Hints) -->
+<meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width, Save-Data, ECT">
+
+<!-- Si el artículo tiene traducciones (SEO Internacional) -->
+<link rel="alternate" hreflang="en" href="https://oirepmimexicano.gieovannyfrias.com">
+<link rel="alternate" hreflang="x-default" href="https://oirepmimexicano.gieovannyfrias.com">
+
+<!-- Control de Caché (Para noticias de última hora con actualizaciones frecuentes) -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <!-- Open Graph / Metadatos para Redes Sociales (Facebook, WhatsApp) -->
+    <meta property="og:type" content="WebSite">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Destinos">
+    <meta property="og:title" content="Destinos | Eventos, conciertos, proyectos, locales y empresas">
+    <meta property="og:description" content="Conoce todos los lugares en toda la republica mexicana.">
+    <meta property="og:url" content="https://oirepmimexicano.gieovannyfrias.com/Destinos">
+    <meta property="og:image" content="https://oirepmimexicano.gieovannyfrias.com/Imagenes/Logo.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Destinos | Eventos, conciertos, proyectos, locales y empresas">
+
+    <!-- Tarjetas Exclusivas para Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Destinos">
+    <meta name="twitter:title" content="Destinos | Eventos, conciertos, proyectos, locales y empresas">
+    <meta name="twitter:description" content="Conoce todos los lugares en toda la republica mexicana.">
+    <meta name="twitter:image" content="https://oirepmimexicano.gieovannyfrias.com/Imagenes/Logo.webp">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D046WDR74N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D046WDR74N');
+</script>
+  
+</head>
+<body>
+  <!-- El Header corporativo se inyectará aquí -->
+    <header id="site-header"></header>
+  <div class="container">
+    <div class="section_1">
+      <h1>Sedes y Destinos Corporativos</h1>
+      <p>Infraestructura estratégica para convenciones, foros y nearshoring en México.</p>
+    </div>
+
+<!-- Contenedor Maestro de Destinos Premium con Controles -->
+<div class="premium-destinations-wrapper">
+  <!-- Flecha de Desplazamiento Izquierda -->
+  <button class="dest-scroll-arrow arrow-left" id="dest-arrow-left" onclick="slideDestinations('left')">
+    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+  </button>
+
+  <!-- Contenedor con la Máscara de Difuminado de bordes -->
+  <div class="dest-scroll-container">
+    <nav class="destinations-nav" id="destinations-nav-bar">
+      <button class="nav-btn active" onclick="switchDestination('cdmx', this)">CDMX (Zócalo)</button>
+      <button class="nav-btn" onclick="switchDestination('mty', this)">Monterrey (San Pedro)</button>
+      <button class="nav-btn" onclick="switchDestination('gdl', this)">Guadalajara (Zapopan)</button>
+      <button class="nav-btn" onclick="switchDestination('qro', this)">Querétaro (Centro)</button>
+      <button class="nav-btn" onclick="switchDestination('pue', this)">Puebla (Angelópolis)</button>
+      <button class="nav-btn" onclick="switchDestination('tij', this)">Tijuana (Otay)</button>
+      <button class="nav-btn" onclick="switchDestination('cln', this)">Culiacán (Tres Ríos)</button>
+      <button class="nav-btn" onclick="switchDestination('slp', this)">San Luis Potosí</button>
+      <button class="nav-btn" onclick="switchDestination('mid', this)">Mérida (Altabrisa)</button>
+      <button class="nav-btn" onclick="switchDestination('cun', this)">Cancún (Zona Hotelera)</button>
+      <button class="nav-btn" onclick="switchDestination('tol', this)">Toluca (Metepec)</button>
+      <button class="nav-btn" onclick="switchDestination('leo', this)">León (Poliforum)</button>
+      <button class="nav-btn" onclick="switchDestination('vsa', this)">Villahermosa</button>
+      <button class="nav-btn" onclick="switchDestination('ver', this)">Veracruz (Boca del Río)</button>
+      <button class="nav-btn" onclick="switchDestination('tam', this)">Tampico</button>
+      <button class="nav-btn" onclick="switchDestination('hmo', this)">Hermosillo</button>
+      <button class="nav-btn" onclick="switchDestination('cuu', this)">Chihuahua</button>
+      <button class="nav-btn" onclick="switchDestination('cjs', this)">Ciudad Juárez</button>
+      <button class="nav-btn" onclick="switchDestination('trc', this)">Torreón</button>
+      <button class="nav-btn" onclick="switchDestination('ags', this)">Aguascalientes</button>
+      <button class="nav-btn" onclick="switchDestination('mxli', this)">Mexicali</button>
+      <button class="nav-btn" onclick="switchDestination('mor', this)">Morelia</button>
+      <button class="nav-btn" onclick="switchDestination('qrt', this)">Querétaro Juriquilla</button>
+      <button class="nav-btn" onclick="switchDestination('salt', this)">Saltillo</button>
+      <button class="nav-btn" onclick="switchDestination('dur', this)">Durango</button>
+      <button class="nav-btn" onclick="switchDestination('tuxt', this)">Tuxtla Gutiérrez</button>
+      <button class="nav-btn" onclick="switchDestination('maz', this)">Mazatlán</button>
+      <button class="nav-btn" onclick="switchDestination('pac', this)">Pachuca</button>
+      <button class="nav-btn" onclick="switchDestination('oax', this)">Oaxaca Centro</button>
+      <button class="nav-btn" onclick="switchDestination('lcs', this)">Los Cabos</button>
+    </nav>
+  </div>
+
+  <!-- Flecha de Desplazamiento Derecha -->
+  <button class="dest-scroll-arrow arrow-right" id="dest-arrow-right" onclick="slideDestinations('right')">
+    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+  </button>
+</div>
+
+    <!-- Aparador Dinámico del Destino -->
+    <main class="destination-showcase" id="destination-content">
+      <!-- Los datos se inyectan dinámicamente con JavaScript -->
+    </main>
+  </div>
+<!-- Componente Global de Lightbox Visor -->
+<div class="lightbox-overlay" id="global-lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="forceCloseLightbox()">&times;</button>
+  <img src="" id="lightbox-target-img" class="lightbox-img" alt="Vista Expandida Nexus">
+</div>
+     <!-- El Footer corporativo se inyectará aquí -->
+    <footer id="site-footer"></footer>
+  
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #0ea5e9;
+      --accent-hover: #38bdf8;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --map-filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);
+    }
+
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+zoom:75%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section_1 {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section_1 h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(to right, #fff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section_1 p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* Sistema de navegación / Filtros */
+/* Nuevo Wrapper Maestro */
+.premium-destinations-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+/* Contenedor protector con máscara difuminada Edge-to-Edge */
+.dest-scroll-container {
+  flex: 1;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
+/* BARRA REESTRUCTURADA: Elimina flex-wrap para evitar distorsión vertical */
+.destinations-nav {
+  display: flex;
+  gap: 0.85rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0.5rem 2.2rem;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.destinations-nav::-webkit-scrollbar {
+  display: none; /* Oculta barra nativa */
+}
+
+/* BOTÓN PROTEGIDO CONTRA COLAPSO */
+.nav-btn {
+  flex-shrink: 0; /* EVITA QUE LOS 30 BOTONES SE DEFORMEN */
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+  padding: 0.75rem 1.6rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.nav-btn:hover, .nav-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.35);
+  color: #fff;
+}
+
+/* DISEÑO PREMIUM DE LAS FLECHAS MULTIMEDIA */
+.dest-scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dest-scroll-arrow.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dest-scroll-arrow:hover {
+  background: #fff;
+  color: var(--bg-primary);
+  border-color: #fff;
+}
+
+.dest-scroll-arrow svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.arrow-left { left: 8px; }
+.arrow-right { right: 8px; }
+
+    /* Contenedor principal del Destino Activo */
+    .destination-showcase {
+      background: var(--bg-secondary);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      min-height: 500px;
+    }
+
+    @media (max-width: 768px) {
+      .destination-showcase {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+      }
+    }
+
+    /* Detalles del destino */
+    .dest-info h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .dest-tag {
+      display: inline-block;
+      background: rgba(14, 165, 233, 0.15);
+      color: var(--accent);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(14, 165, 233, 0.3);
+    }
+
+    .dest-description {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .dest-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .spec-item h4 {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    .spec-item p {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* Contenedor del mapa premium */
+    .map-wrapper {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .premium-map {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      display: block;
+      filter: var(--map-filter);
+      transition: filter 0.5s ease;
+    }
+    /* Contenedor completo de la galería */
+.dest-gallery-section {
+  grid-column: 1 / -1; /* Hace que ocupe todo el ancho inferior en el grid principal */
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--card-border);
+  padding-top: 2rem;
+}
+
+.dest-gallery-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+/* Grid de fotos responsivo */
+.dest-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Tarjetas individuales de imágenes premium */
+.gallery-img-wrapper {
+  overflow: hidden;
+  border-radius: 14px;
+  height: 160px;
+  border: 1px solid var(--border-premium);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.gallery-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+/* Efecto Zoom Premium al pasar el cursor */
+.gallery-img-wrapper:hover img {
+  transform: scale(1.08);
+}
+    /* ==========================================================================
+   SISTEMA LIGHTBOX PREMIUM (PANTALLA COMPLETA)
+   ========================================================================== */
+.lightbox-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(2, 6, 23, 0.85); /* Fondo oscuro profundo */
+  backdrop-filter: blur(12px); /* Difuminado de fondo estilo Apple/SaaS */
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000; /* Asegura estar por encima del mapa y modales */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Imagen expandida dentro del visor */
+.lightbox-img {
+  max-width: 85%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox-overlay.active .lightbox-img {
+  transform: scale(1);
+}
+
+/* Botón de cierre elegante */
+.lightbox-close {
+  position: absolute;
+  top: 2rem; right: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #fff;
+  transform: rotate(90deg);
+}
+  </style>
+    <!-- LLAMADA AL MISMO SCRIPT UNIFICADO -->
+    <script src="src/components/Header-Footer/Header-Footer-main.js" defer></script>
+  <script>    
+    // Base de datos de los destinos corporativos
+ const destinations = {
+      cdmx: {
+        title: "Ciudad de México",
+        tag: "Centro Financiero & IA",
+        description: "El foro definitivo sobre Inteligencia Artificial aplicada e infraestructura Cloud para las principales industrias en México, ubicado en el corazón político y cultural de la nación.",
+        venue: "Plaza de la Constitución / Zócalo",
+        capacity: "Sede Masiva - Hasta 5,000 Ejecutivos",
+          mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d481729.04855758674!2d-99.47327143501768!3d19.390436594470376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0026db097507%3A0x54061076265ee841!2sCiudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1793640801258!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      mty: {
+        title: "Monterrey (San Pedro)",
+        tag: "Epicentro de Nearshoring",
+        description: "Hub industrial y tecnológico enfocado en la automatización de la cadena de suministro, manufactura avanzada y finanzas internacionales del norte del país.",
+        venue: "Distrito Financiero San Pedro Garza García",
+        capacity: "Alta Dirección - 1,200 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230187.47401198573!2d-100.3094129!3d25.64876785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629531b437f8f5%3A0xa3d3d3ca6ac89894!2sMonterrey%2C%20N.L.!5e0!3m2!1ses-419!2smx!4v1793672078025!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      gdl: {
+        title: "Guadalajara",
+        tag: "Silicon Valley Mexicano",
+        description: "Sede de innovación enfocada en el desarrollo de software, tecnologías disruptivas, hardware especializado y ecosistemas de startups de tecnología profunda.",
+        venue: "Distrito Tecnológico Zapopan / Guadalajara",
+        capacity: "Innovación y Tech - 2,500 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119452.63539814546!2d-103.41779921390108!3d20.673856227727057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b18cb52fd39b%3A0xd63d9302bf865750!2sGuadalajara%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1793672174349!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      qro: {
+        title: "Querétaro",
+        tag: "Data Center Capital",
+        description: "El nodo central de procesamiento en la nube más importante de México, especializado en infraestructura hiper-escala, telecomunicaciones y redes corporativas de misión crítica.",
+        venue: "Tech Hub & Data Center Zone Querétaro",
+        capacity: "Infraestructura Cloud - 1,500 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119499.09114686062!2d-100.5053970654119!3d20.614724623675794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35b8fdc5b9255%3A0x97b094aa561b832f!2sSantiago%20de%20Quer%C3%A9taro%2C%20Qro.!5e0!3m2!1ses-419!2smx!4v1793672232506!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      pue: {
+        title: "Puebla",
+        tag: "Automatización Industrial",
+        description: "Cumbre enfocada en manufactura 4.0, IoT integrado y tecnologías de automatización robótica para las cadenas de suministro automotrices globales.",
+        venue: "Distrito de Negocios Angelópolis",
+        capacity: "Corporativo Industrial - 1,800 Ejecutivos",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120689.24513939818!2d-98.27458345412491!3d19.04002912729193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc0bd5ebc7a3b%3A0x48a6461de494ad95!2sHeroica%20Puebla%20de%20Zaragoza%2C%20Pue.!5e0!3m2!1ses-419!2smx!4v1793672300922!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      tij: {
+        title: "Tijuana",
+        tag: "Cross-Border Logistics",
+        description: "Eje binacional clave para la optimización de exportaciones de hardware, dispositivos médicos de precisión y estrategias de logística fronteriza inmediata.",
+        venue: "Parque Industrial Otay Nueva Tijuana",
+        capacity: "Logística y Comercio - 1,100 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107730.71705443042!2d-117.02446168341426!3d32.457043768047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d9390226587bd3%3A0x14724bafa4e62456!2sTijuana%2C%20B.C.!5e0!3m2!1ses-419!2smx!4v1793672380984!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      cln: {
+        title: "Culiacán",
+        tag: "AgroTech Vanguardia",
+        description: "Foro dedicado a la integración de analítica predictiva, automatización de cultivos, sensores IoT y optimización biotecnológica de cadenas alimentarias transfronterizas.",
+        venue: "Distrito de Negocios Tres Ríos",
+        capacity: "AgroTech e Innovación - 900 Líderes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115903.50108888066!2d-107.51380429854581!3d24.795987390802246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86bcd6c77747f98f%3A0x8dd9ebf0eb2d23cc!2sCuliac%C3%A1n%20Rosales%2C%20Sin.!5e0!3m2!1ses-419!2smx!4v1793672426216!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      slp: {
+        title: "San Luis Potosí",
+        tag: "Manufactura Conectada",
+        description: "Hub logístico del bajío especializado en manufactura aditiva, gemelos digitales aplicados a la industria siderúrgica y cadenas globales de proveeduría automotriz.",
+        venue: "Zona Industrial San Luis Potosí",
+        capacity: "Sede de Operaciones - 1,300 Ejecutivos",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118281.98391008015!2d-100.9544602!3d22.114077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842aa20005acfb79%3A0xed2ee29afe18257!2sSan%20Luis%20Potos%C3%AD%2C%20S.L.P.!5e0!3m2!1ses-419!2smx!4v1793734130756!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      mid: {
+        title: "Mérida",
+        tag: "Inversión y Bienestar Corp",
+        description: "Enfoque en ciberseguridad, oficinas corporativas sustentables y el auge del desarrollo inmobiliario comercial/ejecutivo del sureste del país.",
+        venue: "Distrito Financiero Altabrisa",
+        capacity: "Alta Dirección - 1,000 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119205.20809659072!2d-89.71092265585483!3d20.98611213647332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f56715cab450d17%3A0x5dfc155715abeb09!2zTcOpcmlkYSwgWXVjLg!5e0!3m2!1ses-419!2smx!4v1793734209441!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      cun: {
+        title: "Cancún",
+        tag: "MICE & Convenciones",
+        description: "El epicentro nacional para convenciones masivas internacionales (MICE), enfocado en estrategias de hospitalidad inteligente y finanzas turísticas globales.",
+        venue: "Centro de Convenciones Zona Hotelera",
+        capacity: "Sede Masiva - 3,500 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119095.60302088295!2d-86.9388052022907!3d21.123025281432803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2b05aef653db%3A0xce32b73c625fcd8a!2zQ2FuY8O6biwgUS5SLg!5e0!3m2!1ses-419!2smx!4v1793734281899!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+    tol: {
+        title: "Toluca (Metepec)",
+        tag: "Automotriz E-Mobility",
+        description: "Cumbre enfocada en el desarrollo de plataformas de movilidad eléctrica, ensamble de vehículos de última generación y optimización de cadenas de suministro automotrices.",
+        venue: "Centro de Negocios e Industrial Toluca-Metepec",
+        capacity: "Clúster Automotriz - 1,200 Ejecutivos",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60256.345758288866!2d-99.70450037489694!3d19.281426433074504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd89892a50ebb9%3A0xad3f4ad5550208c4!2sToluca%20de%20Lerdo%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1793734318802!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      leo: {
+        title: "León",
+        tag: "Manufactura y Moda Corp",
+        description: "Sede de innovación en procesos de diseño industrial, proveeduría de materiales a gran escala y logística para el calzado y la marroquinería internacional.",
+        venue: "Poliforum León",
+        capacity: "Sede Masiva - Hasta 4,000 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119093.87128645185!2d-101.74747880223441!3d21.12518167978204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bbeffd6e6e721%3A0x606d95ec61a54327!2sLe%C3%B3n%20de%20los%20Aldama%2C%20Gto.!5e0!3m2!1ses-419!2smx!4v1793734397153!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      vsa: {
+        title: "Villahermosa",
+        tag: "Hub Energético Nacional",
+        description: "El foro estratégico de infraestructura energética, transición a energías limpias y gestión operativa de petróleo y gas en la región sureste.",
+        venue: "Centro de Convenciones Tabasco 2000",
+        capacity: "Energía y Logística - 1,500 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60715.254813565436!2d-92.99443038221689!3d17.992529898209646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85edd796d7420653%3A0xf5607b62558ae894!2sVillahermosa%2C%20Tab.!5e0!3m2!1ses-419!2smx!4v1793734469163!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      ver: {
+        title: "Veracruz (Boca del Río)",
+        tag: "Comercio Marítimo y Aduanas",
+        description: "Sede enfocada en la optimización portuaria global, blockchain aplicado a cadenas de suministro aduanales y derecho comercial internacional marítimo.",
+        venue: "World Trade Center Veracruz",
+        capacity: "Comercio Exterior - 2,500 Ejecutivos",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60293.96385182445!2d-96.20359642549693!3d19.17891545382665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c3414245ca78c5%3A0x18a4d642e936019b!2sVeracruz%2C%20Ver.!5e0!3m2!1ses-419!2smx!4v1793734503201!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      tam: {
+        title: "Tampico",
+        tag: "Petroquímica e Infraestructura",
+        description: "Encuentro enfocado en la industria química masiva, almacenamiento estratégico de combustibles y optimización de terminales portuarias de distribución.",
+        venue: "Centro de Convenciones y Exposiciones de Tampico",
+        capacity: "Corporativo Industrial - 1,100 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59076.96380440265!2d-97.91068545608996!3d22.26623495582301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d7fd8bfcfe2d1f%3A0xc3189ac39db089e6!2sTampico%2C%20Tamps.!5e0!3m2!1ses-419!2smx!4v1793734759272!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      hmo: {
+        title: "Hermosillo",
+        tag: "AgroIndustria Tecnológica",
+        description: "Cumbre enfocada en tecnologías de desalinización, celdas solares a gran escala y automatización avanzada de procesos de empaque de exportación.",
+        venue: "Expo Forum Hermosillo",
+        capacity: "Sede Regional - 1,200 Ejecutivos",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111575.8107795065!2d-111.07109640806472!3d29.083706329432136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce84687adfaee5%3A0xb33d5395e9887ff9!2sHermosillo%2C%20Son.!5e0!3m2!1ses-419!2smx!4v1793734818017!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      cuu: {
+        title: "Chihuahua",
+        tag: "Aeroespacial y Nearshoring",
+        description: "El foro definitivo de desarrollo de componentes de aviación de alta precisión, diseño satelital avanzado e inversiones de capital norteamericano.",
+        venue: "Centro de Exposiciones y Convenciones de Chihuahua",
+        capacity: "Alta Tecnología - 2,000 Líderes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112013.3807589885!2d-106.14056987225975!3d28.677135753718172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ea449d5d484033%3A0xb7f1a7a706dd1d7b!2sChihuahua%2C%20Chih.!5e0!3m2!1ses-419!2smx!4v1793734857171!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      cjs: {
+        title: "Ciudad Juárez",
+        tag: "Manufactura Biomédica",
+        description: "Hub especializado en el diseño de microcircuitos médicos, robótica de ensamblaje masivo y logística transfronteriza de alta frecuencia hacia El Paso.",
+        venue: "Centro de Convenciones Cibeles Juárez",
+        capacity: "Manufactura de Precisión - 1,400 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217361.65969209862!2d-106.60811235580493!3d31.65366976415632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e75ecb3d0b329d%3A0xb196100549c7974!2zSnXDoXJleiwgQ2hpaC4!5e0!3m2!1ses-419!2smx!4v1793736258344!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      trc: {
+        title: "Torreón",
+        tag: "Metalurgia e Industria Pesada",
+        description: "Cumbre enfocada en procesos metalúrgicos de bajas emisiones, gemelos digitales para la industria del acero e infraestructura de manufactura pesada.",
+        venue: "Centro de Convenciones de Torreón",
+        capacity: "Industrial y Energía - 1,300 Ejecutivos",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115190.69870785747!2d-103.48453477539402!3d25.548057294477623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868fdba9bb45b3fb%3A0x8bcc7a9970aea01d!2zVG9ycmXDs24sIENvYWgu!5e0!3m2!1ses-419!2smx!4v1793736296805!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      ags: {
+        title: "Aguascalientes",
+        tag: "Sistemas Logísticos Integrados",
+        description: "Eje del bajío especializado en desarrollo logístico ferroviario, inteligencia artificial aplicada al inventario automatizado y proveeduría automotriz japonesa.",
+        venue: "Ficotrece - Macroespacio Universitario",
+        capacity: "Logística Global - 1,600 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118488.09684331025!2d-102.45333857820508!3d21.867060092165318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ec143ae4d9fb%3A0x4016978679c5220!2sAguascalientes%2C%20Ags.!5e0!3m2!1ses-419!2smx!4v1793736333846!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      mxli: {
+        title: "Mexicali",
+        tag: "Data Hub Fronterizo",
+        description: "Foro de TI enfocado en la refrigeración de data centers industriales de alta escala, energía geotérmica dedicada y conectividad directa con California.",
+        venue: "CEART Mexicali Centro de Convenciones",
+        capacity: "Tecnología de Redes - 900 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107549.50864424925!2d-115.52802887754366!3d32.60825820212349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d7700ca877ddd3%3A0xd40033a0e5cdf59a!2sMexicali%2C%20B.C.!5e0!3m2!1ses-419!2smx!4v1793736387725!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      mor: {
+        title: "Morelia",
+        tag: "AgroTech y Software Logístico",
+        description: "Integración de tecnologías GIS para el rastreo fitosanitario, automatización de exportación agrícola y desarrollo de software para el comercio regional.",
+        venue: "Centro de Convenciones de Morelia (CECONEXPO)",
+        capacity: "Innovación de Software - 1,150 Líderes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120202.78510731747!2d-101.29273258829969!3d19.698270046329924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0ba2b29da7e3%3A0x4016978679c8620!2sMorelia%2C%20Mich.!5e0!3m2!1ses-419!2smx!4v1793736427002!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      qrt: {
+        title: "Querétaro Juriquilla",
+        tag: "Investigación y Deep Tech",
+        description: "El foro de desarrollo científico aplicado, nanotecnología para nuevos componentes industriales avanzados y laboratorios corporativos globales.",
+        venue: "Hacienda Juriquilla Executive Hub",
+        capacity: "Investigación y Desarrollo - 800 Doctores",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59710.07178574102!2d-100.50077191618487!3d20.71511779915483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35766173bee91%3A0xda7b5eafbfea0518!2sJuriquilla%2C%20Qro.!5e0!3m2!1ses-419!2smx!4v1793736471383!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      salt: {
+        title: "Saltillo",
+        tag: "Sede de Manufactura Robótica",
+        description: "Análisis de celdas de trabajo automáticas, sistemas de pintura robótica para camiones comerciales pesados y optimización de proveeduría automotriz.",
+        venue: "Centro de Convenciones Saltillo",
+        capacity: "Automatización Avanzada - 1,400 Ejecutivos",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115303.55809851032!2d-101.0625786290593!3d25.43036597110728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86880d9078df19ef%3A0xa9519241794730c0!2sSaltillo%2C%20Coah.!5e0!3m2!1ses-419!2smx!4v1793736520924!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      dur: {
+        title: "Durango",
+        tag: "Recursos Forestales e Infraestructura",
+        description: "Sede enfocada en sustentabilidad maderera certificada por cadenas globales de valor, logística minera aditiva y conectividad portuaria comercial.",
+        venue: "Centro de Convenciones Bicentenario Durango",
+        capacity: "Sede Comercial - 1,000 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3715583.647560589!2d-107.48231183323989!3d24.57194674006909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8690a9c1af734549%3A0x297de241abe308b2!2sDurango!5e0!3m2!1ses-419!2smx!4v1793736558946!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      tuxt: {
+        title: "Tuxtla Gutiérrez",
+        tag: "Energía Renovable del Sureste",
+        description: "Cumbre enfocada en generación hidroeléctrica, proyectos eólicos de coinversión internacional y desarrollo corporativo regional sustentable.",
+        venue: "Centro de Convenciones de Chiapas (Tuxtla)",
+        capacity: "Desarrollo Sustentable - 1,100 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61130.62347519173!2d-93.17384383884328!3d16.743610313528777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ecd85611d06e8f%3A0xdd78bd7b4662216a!2sTuxtla%20Guti%C3%A9rrez%2C%20Chis.!5e0!3m2!1ses-419!2smx!4v1793736596613!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      maz: {
+        title: "Mazatlán",
+        tag: "Inversión Logística Portuaria",description: "El foro del nuevo corredor comercial del norte de México, expansión de aduanas marítimas y desarrollo inmobiliario industrial del pacífico.",
+        venue: "Mazatlán International Center (MIC)",
+        capacity: "Sede de Convenciones - 3,000 Ejecutivos",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15225.827920403399!2d-99.48722131938592!3d17.43782850285947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cbc4a8678ba3db%3A0x14364583b8165c8d!2s39100%20Mazatl%C3%A1n%2C%20Gro.!5e0!3m2!1ses-419!2smx!4v1793737060999!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      pac: {
+        title: "Pachuca",
+        tag: "Centros de Distribución Inteligente",
+        description: "Sede logística estratégica de conectividad acelerada hacia el AIFA y el Valle de México, enfocada en e-commerce transfronterizo masivo.",
+        venue: "TuzoForum Centro de Convenciones",
+        capacity: "Logística y Distribución - 1,200 Líderes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59951.28802410908!2d-98.75994009382602!3d20.09414691870592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1a7716f1e038b%3A0x13315c101496b749!2sPachuca%20de%20Soto%2C%20Hgo.!5e0!3m2!1ses-419!2smx!4v1793736927994!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      oax: {
+        title: "Oaxaca Centro",
+        tag: "Innovación Cultural y Fintech",
+        description: "Foro de convergencia entre industrias creativas tradicionales de exportación, pasarelas de pago globales integradas y marcas de lujo sustentables.",
+        venue: "Centro Cultural y de Convenciones de Oaxaca",
+        capacity: "Emprendimiento de Alta Gama - 1,500 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61021.09221399414!2d-96.77493318709587!3d17.08153999095168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c72249df26d9b1%3A0xac88a77657dffc3b!2sOaxaca%20de%20Ju%C3%A1rez%2C%20Oax.!5e0!3m2!1ses-419!2smx!4v1793736791822!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      },
+      lcs: {
+        title: "Los Cabos",
+        tag: "Summit Internacional y Finanzas",
+        description: "El foro definitivo para juntas directivas globales, fondos de inversión de capital de alto riesgo y cumbres corporativas transatlánticas discretas.",
+        venue: "Los Cabos International Executive Hub",
+        capacity: "Exclusivo / Alta Dirección - 750 Asistentes",
+        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117582.49663535325!2d-109.97161860310067!3d22.933537436091054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86af4af389e508a1%3A0x4ba4df62c1a2b868!2sCabo%20San%20Lucas%2C%20B.C.S.!5e0!3m2!1ses-419!2smx!4v1793736835870!5m2!1ses-419!2smx",
+        // Arreglo de 3 imágenes premium para la galería inferior de la CDMX
+        gallery: [
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000",
+          "https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000"
+        ]
+      }
+    };
+function renderDestination(key) {
+  const data = destinations[key];
+  const container = document.getElementById('destination-content');
+  
+  container.style.opacity = '0';
+  
+  setTimeout(() => {
+    // 1. Generar los elementos HTML con el disparador 'openLightbox(this.src)' integrado en cada imagen
+    let galleryHTML = '';
+    if (data.gallery && data.gallery.length > 0) {
+      let imagesHTML = '';
+      
+      for (let i = 0; i < data.gallery.length; i++) {
+        let currentUrl = data.gallery[i];
+        
+        imagesHTML += [
+          '<div class="gallery-img-wrapper">',
+            // El atributo onclick="openLightbox(this.src)" detecta de inmediato qué foto se presionó
+            '<img src="', currentUrl, '" crossorigin="anonymous" alt="Instalaciones Nexus" onclick="openLightbox(this.src)" style="cursor: pointer;" onerror="this.src=\'https://unsplash.com\'">',
+          '</div>'
+        ].join('');
+      }
+
+      galleryHTML = [
+        '<div class="dest-gallery-section">',
+          '<h3>Instalaciones y Entorno del Hub (Clic para expandir)</h3>',
+          '<div class="dest-gallery-grid">',
+            imagesHTML,
+          '</div>',
+        '</div>'
+      ].join('');
+    }
+
+    // 2. Inyectar todo el conjunto estructural (Detalles + Mapa + Galería Inferior)
+    container.innerHTML = [
+      '<div class="dest-info">',
+        '<span class="dest-tag">', data.tag, '</span>',
+        '<h2>', data.title, '</h2>',
+        '<p class="dest-description">', data.description, '</p>',
+        '<div class="dest-specs">',
+          '<div class="spec-item">',
+            '<h4>Recinto Primario</h4>',
+            '<p>', data.venue, '</p>',
+          '</div>',
+          '<div class="spec-item">',
+            '<h4>Capacidad del Hub</h4>',
+            '<p>', data.capacity, '</p>',
+          '</div>',
+        '</div>',
+      '</div>',
+      '<div class="map-wrapper">',
+        '<iframe src="', data.mapUrl, '" class="premium-map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+      '</div>',
+      galleryHTML
+    ].join('');
+    
+    container.style.opacity = '1';
+  }, 200);
+}
+
+// ==========================================================================
+// CONTROLADORES INTERACTIVOS DE PANTALLA COMPLETA (LIGHTBOX)
+// ==========================================================================
+function openLightbox(imageSrc) {
+  const lightbox = document.getElementById('global-lightbox');
+  const targetImg = document.getElementById('lightbox-target-img');
+  
+  // Asignar la ruta de la imagen seleccionada al visor gigante
+  targetImg.src = imageSrc;
+  
+  // Activar contenedor con animaciones fluidas
+  lightbox.classList.add('active');
+}
+
+function forceCloseLightbox() {
+  document.getElementById('global-lightbox').classList.remove('active');
+}
+
+function closeLightbox(e) {
+  // Permite cerrar la pantalla completa al dar clic en las zonas vacías del fondo
+  if (e.target.classList.contains('lightbox-overlay')) {
+    forceCloseLightbox();
+  }
+}
+// Controlador del cambio de pestañas con centrado inteligente
+function switchDestination(key, button) {
+  document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
+  
+  // Centrar automáticamente el botón en móviles al dar clic
+  button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  
+  renderDestination(key);
+}
+
+// Carga inicial y listeners del carrusel de flechas
+const destNavBar = document.getElementById('destinations-nav-bar');
+const destArrowLeft = document.getElementById('dest-arrow-left');
+const destArrowRight = document.getElementById('dest-arrow-right');
+
+function slideDestinations(direction) {
+  const offsetWidth = destNavBar.clientWidth * 0.65;
+  if (direction === 'left') {
+    destNavBar.scrollLeft -= offsetWidth;
+  } else {
+    destNavBar.scrollLeft += offsetWidth;
+  }
+}
+
+function checkDestArrows() {
+  const currentScroll = destNavBar.scrollLeft;
+  const maximumScroll = destNavBar.scrollWidth - destNavBar.clientWidth;
+
+  if (currentScroll > 6) {
+    destArrowLeft.classList.add('visible');
+  } else {
+    destArrowLeft.classList.remove('visible');
+  }
+
+  if (currentScroll < maximumScroll - 6) {
+    destArrowRight.classList.add('visible');
+  } else {
+    destArrowRight.classList.remove('visible');
+  }
+}
+
+destNavBar.addEventListener('scroll', checkDestArrows);
+window.addEventListener('resize', checkDestArrows);
+
+// Carga inicial unificada
+window.onload = () => {
+  renderDestination('cdmx');
+  setTimeout(checkDestArrows, 400);
+};
+  </script>
+</body>
+</html>
